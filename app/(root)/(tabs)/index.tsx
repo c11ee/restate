@@ -10,7 +10,7 @@ const Index = () => {
         alignItems: "center",
       }}
     >
-      <Text className="font-bold text-2xl">Welcome</Text>
+      <Text className="font-bold text-3xl font-rubik">Welcome</Text>
       <Link href="/sign-in">Sign In</Link>
       <Link href="/properties/1">properties</Link>
     </View>
