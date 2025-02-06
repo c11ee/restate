@@ -92,7 +92,7 @@ export async function logout() {
 }
 
 /** 获取用户 */
-export async function getUser() {
+export async function getCurrentUser() {
   try {
     const response = await account.get();
 
@@ -109,5 +109,3 @@ export async function getUser() {
     return null;
   }
 }
-
-// 00:59:53

@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
 import "./global.css";
+import GlobalProvider from "@/lib/global-provider";
 
 export default function RootLayout() {
   // 异步加载自定义字体
@@ -28,6 +29,11 @@ export default function RootLayout() {
     return null;
   }
 
-  // 管理屏幕的堆叠和导航
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    // 为了让全局能使用里面的数据
+    <GlobalProvider>
+      {/* 管理屏幕的堆叠和导航 */}
+      <Stack screenOptions={{ headerShown: false }} />
+    </GlobalProvider>
+  );
 }
