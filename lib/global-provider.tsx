@@ -5,7 +5,10 @@ import { Models } from "react-native-appwrite";
 
 interface GlobalContextType {
   isLoggedIn: boolean;
-  user: Models.User<Models.Preferences> | undefined | null;
+  user:
+    | (Models.User<Models.Preferences> & { avatar: string })
+    | undefined
+    | null;
   loading: boolean;
   refetch: (newParams: Record<string, string | number>) => Promise<void>;
 }
@@ -41,3 +44,5 @@ export const useGlobalContext = (): GlobalContextType => {
 };
 
 export default GlobalProvider;
+
+// 1:15:38
